@@ -2,9 +2,9 @@ import Head from 'next/head'
 import React from 'react'
 import Link from 'next/link';
 import { gql } from "@apollo/client";
-import client from '../../apollo-client'
+import client from '@/apollo-client'
 
-import Layout from '../../components/layout'
+import Layout from '@/components/layout'
 //
 function Page(props) {
   const item = props.item

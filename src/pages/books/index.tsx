@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { gql } from "@apollo/client";
-import client from '../../apollo-client'
-import Layout from '../../components/layout'
+import client from '@/apollo-client'
+import Layout from '@/components/layout'
 import IndexRow from './IndexRow';
-import cookies from 'next-cookies'
+import cookies from 'next-cookies';
 //
 function Index(props) {
 //console.log(props);

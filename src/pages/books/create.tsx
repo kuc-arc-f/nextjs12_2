@@ -4,10 +4,11 @@ import flash from 'next-flash';
 import React, {Component} from 'react';
 //import cookies from 'next-cookies'
 import { gql } from "@apollo/client";
-import client from '../../apollo-client'
+import client from '@/apollo-client'
 
-import LibCookie from "../../client/lib/LibCookie";
-import Layout from '../../components/layout'
+import LibCookie from "@/client/lib/LibCookie";
+import Layout from '@/components/layout'
+import LoadingBox from '@/components/LoadingBox'
 
 interface IState {
   title: string,
@@ -90,11 +91,11 @@ console.log(result.data.addBook);
   render() {
 console.log(this.state);
     return (
-      <Layout>
+    <Layout>
+      <main>
         {this.state.button_display ? (<div />): (
-          <div className="alert alert-success text-center" role="alert">Loading...</div>
-        )
-        }
+          <LoadingBox></LoadingBox>
+        )}
         <div className="container">
           <Link href="/books">
             <a className="btn btn-outline-primary mt-2">Back</a></Link>
@@ -120,11 +121,10 @@ console.log(this.state);
           }          
           <hr />
           {/*
-              <button className="btn btn-primary" onClick={this.handleClick}>Create
-              </button>
           */}
         </div>
-      </Layout>
+      </main>
+    </Layout>
     )    
   } 
 }

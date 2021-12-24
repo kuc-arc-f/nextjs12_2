@@ -3,12 +3,12 @@ import Link from 'next/link';
 import Router from 'next/router'
 import React from 'react'
 import flash from 'next-flash';
-//import cookies from 'next-cookies'
 import { gql } from "@apollo/client";
-import client from '../../../apollo-client'
+import client from '@/apollo-client'
 
-import LibCookie from "../../../client/lib/LibCookie";
-import Layout from '../../../components/layout'
+import LibCookie from "@/client/lib/LibCookie";
+import Layout from '@/components/layout'
+import LoadingBox from '@/components/LoadingBox'
 
 interface IState {
   title: string,
@@ -145,7 +145,7 @@ console.log(this.state);
     return (
       <Layout>
         {this.state.button_display ? (<div />): (
-          <div className="alert alert-success text-center" role="alert">Loading...</div>
+          <LoadingBox></LoadingBox>
         )
         }        
         <div className="container">
